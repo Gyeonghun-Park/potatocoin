@@ -1,26 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
-    <title>Potato Coin</title>
-</head>
-<body>
-<header>
-    <h1>{{.PageTitle}}</h1>
-</header>
-<main>
-    {{range .Blocks}}
-        <section>
-            <ul>
-                <li>{{.Data}}</li>
-                <li>{{.Hash}}</li>
-                <li>{{.PrevHash}}</li>
-            </ul>
-        </section>
-    {{end}}
-</main>
-</body>
-</html>s
+{{define "home"}}
+    <!DOCTYPE html>
+    <html lang="en">
+    {{template "head" .PageTitle}}
+    <body>
+    {{template "header" .PageTitle}}
+    <main>
+        {{range .Blocks}}
+            {{template "block" .}}
+        {{end}}
+    </main>
+    {{template "footer"}}
+    </body>
+    </html>
+{{end}}
