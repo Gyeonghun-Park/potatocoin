@@ -1,11 +1,9 @@
 package main
 
 import (
-	"github.com/Gyeonghun-Park/potatocoin/explorer"
-	"github.com/Gyeonghun-Park/potatocoin/rest"
+	"github.com/Gyeonghun-Park/potatocoin/cli"
 )
 
 func main() {
-	go explorer.Start(3000)
-	rest.Start(4000)
+	cli.Start()
 }
