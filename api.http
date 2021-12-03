@@ -5,9 +5,14 @@ http://localhost:4000/status
 http://localhost:4000/blocks
 ###
 POST http://localhost:4000/blocks
+###
+POST http://localhost:4000/transactions
 
 {
-    "message": "Mine me!"
+    "to":"potato",
+    "amount":50
 }
 ###
-http://localhost:4000/blocks/3
+http://localhost:4000/mempool
+###
+http://localhost:4000/balance/nico
