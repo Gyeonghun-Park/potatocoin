@@ -2,7 +2,6 @@ package blockchain
 
 import (
 	"errors"
-	"fmt"
 	"github.com/Gyeonghun-Park/potatocoin/db"
 	"github.com/Gyeonghun-Park/potatocoin/utils"
 	"strings"
@@ -44,7 +43,6 @@ func (b *Block) mine() {
 	for {
 		b.Timestamp = int(time.Now().Unix())
 		hash := utils.Hash(b)
-		fmt.Printf("\n\n\nTarget:%s\nHash:%s\nNonce:%d\n\n\n", target, hash, b.Nonce)
 		if strings.HasPrefix(hash, target) {
 			b.Hash = hash
 			break
